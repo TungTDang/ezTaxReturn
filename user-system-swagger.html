@@ -17,6 +17,11 @@
   </head>
 
   <body>
+    <script>
+      function processFiles(files) {
+        document.getElementById("download_url_input").value = "user&system.swagger.json";
+      }
+    </script>
     <div id="swagger-ui"></div>
     <input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
     <div id="message"></div>
