@@ -1,0 +1,1057 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2023-01-06T07:09:29Z",
+    "title": "/User Management and System Setting API"
+  },
+  "host": "uyulnfo8gj.execute-api.ap-southeast-1.amazonaws.com",
+  "basePath": "/api-eztaxreturn",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginrequest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/loginrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/tokenmodelres"
+            }
+          }
+        }
+      }
+    },
+    "/permission": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/permissionmodels"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "permissionmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/permissionmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/permissionmodel"
+            }
+          }
+        }
+      }
+    },
+    "/permission/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/permissionmodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "permissionmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/permissionmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/permissionmodel"
+            }
+          }
+        }
+      }
+    },
+    "/role": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/rolemodels"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "rolemodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/rolemodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/role/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/rolemodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/signout": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        },
+        "security": [
+          {
+            "eztaxreturn_auth": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/system": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "eztaxreturn_auth": [
+
+            ]
+          }
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "eztaxreturn_auth": [
+
+            ]
+          }
+        ]
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "eztaxreturn_auth": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/system/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "usermodels",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/usermodels"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "usermodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/usermodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/authentication": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginrequest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/loginrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/forgot-name": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "forgotusernamemodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/forgotusernamemodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/forgot-password": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "forgotmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/forgotmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/otp/change-password": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "optchangepasswordmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/optchangepasswordmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/otp/validation": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "otpmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/otpmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/usermodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "usermodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/usermodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}/changePassword": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "changepassmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/changepassmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}/invite": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/usermodel"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "inviterequestmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inviterequestmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "eztaxreturn_auth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "x-amazon-apigateway-authtype": "cognito_user_pools"
+    }
+  },
+  "definitions": {
+    "usermodel": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "SSN": {
+          "type": "number"
+        },
+        "email": {
+          "type": "string"
+        },
+        "permission_id": {
+          "type": "string"
+        },
+        "role_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "password": {
+          "type": "string"
+        },
+        "day_phone": {
+          "type": "string"
+        },
+        "cell_phone": {
+          "type": "string"
+        },
+        "create_date": {
+          "type": "string"
+        }
+      },
+      "title": "usermodel Schema"
+    },
+    "usermodels": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/usermodel"
+          }
+        }
+      },
+      "title": "usermodels schema"
+    },
+    "changepassmodel": {
+      "type": "object",
+      "properties": {
+        "current_password": {
+          "type": "string"
+        },
+        "new_password": {
+          "type": "string"
+        },
+        "retype_password": {
+          "type": "string"
+        }
+      },
+      "title": "changepassmodel Schema"
+    },
+    "paymentmodel": {
+      "type": "object",
+      "properties": {
+        "tranaction_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "card_type": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "holder_name": {
+          "type": "string"
+        },
+        "expired_month": {
+          "type": "number"
+        },
+        "expired_year": {
+          "type": "number"
+        },
+        "cvc": {
+          "type": "number"
+        },
+        "payment_amount": {
+          "type": "number"
+        },
+        "coupon_discount": {
+          "type": "number"
+        },
+        "other_discount": {
+          "type": "number"
+        },
+        "filer_id": {
+          "type": "string"
+        },
+        "receipt_number": {
+          "type": "string"
+        }
+      },
+      "title": "paymentmodel Schema"
+    },
+    "defaultmodel": {
+      "type": "object",
+      "properties": {
+        "status_code": {
+          "type": "number"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "defaultmodel Schema"
+    },
+    "permissionmodels": {
+      "type": "object",
+      "properties": {
+        "permissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/permissionmodel"
+          }
+        }
+      },
+      "title": "permissionmodels schema"
+    },
+    "loginrequest": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "title": "loginrequest Schema"
+    },
+    "optchangepasswordmodel": {
+      "type": "object",
+      "properties": {
+        "otp_code": {
+          "type": "string"
+        },
+        "new_password": {
+          "type": "string"
+        },
+        "retype_password": {
+          "type": "string"
+        }
+      },
+      "title": "optchangepasswordmodel Schema"
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    },
+    "otpmodel": {
+      "type": "object",
+      "properties": {
+        "otp_code": {
+          "type": "string"
+        }
+      },
+      "title": "otpmodel Schema"
+    },
+    "forgotusernamemodel": {
+      "type": "object",
+      "properties": {
+        "email_address": {
+          "type": "string"
+        }
+      },
+      "title": "forgotusernamemodel Schema"
+    },
+    "rolemodels": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rolemodel"
+          }
+        }
+      },
+      "title": "rolemodels schema"
+    },
+    "forgotmodel": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        }
+      },
+      "title": "forgotmodel Schema"
+    },
+    "permissionmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "permission_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "permissionmodel Schema"
+    },
+    "tokenmodelres": {
+      "type": "object",
+      "properties": {
+        "id_token": {
+          "type": "string"
+        },
+        "access_token": {
+          "type": "string"
+        },
+        "refresh_token": {
+          "type": "string"
+        },
+        "token_type": {
+          "type": "string"
+        },
+        "expire_in": {
+          "type": "number"
+        }
+      },
+      "title": "responsetokenmodel Schema"
+    },
+    "inviterequestmodel": {
+      "type": "object",
+      "properties": {
+        "email_address": {
+          "type": "string"
+        }
+      },
+      "title": "inviterequestmodel Schema"
+    },
+    "rolemodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "rolemodel Schema"
+    }
+  }
+}
