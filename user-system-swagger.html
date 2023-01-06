@@ -9,25 +9,18 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
-    <script>
-      function processFiles(files) {
-        document.getElementById("download_url_input").value = "user-system.swagger.json";
-      }
-    </script>
   </head>
 
   <body>
-    <script>
-      function processFiles(files) {
-        document.getElementById("download_url_input").value = "user-system.swagger.json";
-      }
+
     </script>
     <div id="swagger-ui"></div>
-    <input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
-    <div id="message"></div>
-    <div id="fileOutput"></div>
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script src="./swagger-initializer.js" charset="UTF-8"> </script>
+      <script>
+      function processFiles(files) {
+        document.getElementById("download_url_input").value = "user-system.swagger.json";
+      }
   </body>
 </html>
