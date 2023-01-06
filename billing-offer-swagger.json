@@ -1,0 +1,1328 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2023-01-06T07:09:29Z",
+    "title": "/Billing&Offer&Partner&Pricing Management"
+  },
+  "host": "uyulnfo8gj.execute-api.ap-southeast-1.amazonaws.com",
+  "basePath": "/Billing&Offer&Partner&Pricing Management",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/card": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "itemmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/itemmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/cardmodel"
+            }
+          }
+        }
+      }
+    },
+    "/card/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "itemmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/itemmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/cardmodel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "itemmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/itemmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/cardmodel"
+            }
+          }
+        }
+      }
+    },
+    "/coupons": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/couponmodels"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/couponmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/coupons/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/couponmodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "couponmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/couponmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/coupons/{id}/copy": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "couponmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/couponmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/filer": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "filerrecordmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/filerrecordmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/filer/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/order": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/ordermodel"
+            }
+          }
+        }
+      }
+    },
+    "/order/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/order/{id}/submission": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "ordermodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordermodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/ordermodel"
+            }
+          }
+        }
+      }
+    },
+    "/partners": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/partnermodels"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "partnermodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/partnermodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/partners/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/partnermodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "partnermodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/partnermodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/partnermodel"
+            }
+          }
+        }
+      }
+    },
+    "/payment": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "paymentmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/paymentmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/paymentmodel"
+            }
+          }
+        }
+      }
+    },
+    "/payment/refundlist": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/refundbankmodels"
+            }
+          }
+        }
+      }
+    },
+    "/payments": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "paymentmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/paymentmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "productmodels",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productmodels"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/productmodels"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "productmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/productmodel"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "productmodel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productmodel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "eztaxreturn_auth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "x-amazon-apigateway-authtype": "cognito_user_pools"
+    }
+  },
+  "definitions": {
+    "usermodel": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "SSN": {
+          "type": "number"
+        },
+        "email": {
+          "type": "string"
+        },
+        "permission_id": {
+          "type": "string"
+        },
+        "role_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "password": {
+          "type": "string"
+        },
+        "day_phone": {
+          "type": "string"
+        },
+        "cell_phone": {
+          "type": "string"
+        },
+        "create_date": {
+          "type": "string"
+        }
+      },
+      "title": "usermodel Schema"
+    },
+    "ordermodel": {
+      "type": "object",
+      "properties": {
+        "payment_method": {
+          "type": "string"
+        },
+        "payment": {
+          "$ref": "#/definitions/paymentmodel"
+        },
+        "status": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "visit_from": {
+          "type": "string"
+        },
+        "ssn": {
+          "type": "string"
+        },
+        "total_price": {
+          "type": "number"
+        },
+        "partner_id": {
+          "type": "string"
+        },
+        "filer_id": {
+          "type": "string"
+        },
+        "other_discount": {
+          "type": "number"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/itemmodel"
+          }
+        }
+      },
+      "title": "ordermodel Schema"
+    },
+    "filerrecordmodel": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "SSN": {
+          "type": "number"
+        },
+        "email": {
+          "type": "string"
+        },
+        "group_id": {
+          "type": "string"
+        },
+        "role_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "day_phone": {
+          "type": "string"
+        },
+        "cell_phone": {
+          "type": "string"
+        }
+      },
+      "title": "filerrecordmodel Schema"
+    },
+    "taxreturnmodels": {
+      "type": "object",
+      "properties": {
+        "taxreturns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/taxreturnmodel"
+          }
+        }
+      },
+      "title": "taxreturnmodels schema"
+    },
+    "paymentmodel": {
+      "type": "object",
+      "properties": {
+        "tranaction_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "card_type": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "holder_name": {
+          "type": "string"
+        },
+        "expired_month": {
+          "type": "number"
+        },
+        "expired_year": {
+          "type": "number"
+        },
+        "cvc": {
+          "type": "number"
+        },
+        "payment_amount": {
+          "type": "number"
+        },
+        "coupon_discount": {
+          "type": "number"
+        },
+        "other_discount": {
+          "type": "number"
+        },
+        "filer_id": {
+          "type": "string"
+        },
+        "receipt_number": {
+          "type": "string"
+        }
+      },
+      "title": "paymentmodel Schema"
+    },
+    "defaultmodel": {
+      "type": "object",
+      "properties": {
+        "status_code": {
+          "type": "number"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "defaultmodel Schema"
+    },
+    "partnermodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "organization_name": {
+          "type": "string"
+        },
+        "partner_key": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "partnermodel Schema"
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    },
+    "couponmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "coupon_code": {
+          "type": "string"
+        },
+        "partner_type": {
+          "type": "string"
+        },
+        "organization_name": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "rate": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "ssn": {
+          "type": "string"
+        },
+        "expired_date": {
+          "type": "string"
+        },
+        "offer_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "title": "couponmodel Schema"
+    },
+    "itemmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "session_id": {
+          "type": "integer"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "product_price": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "itemmodel Schema"
+    },
+    "productmodels": {
+      "type": "object",
+      "properties": {
+        "offers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productmodel"
+          }
+        }
+      },
+      "title": "productmodels schema"
+    },
+    "refundbankmodels": {
+      "type": "object",
+      "properties": {
+        "refundbanks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/refundbankmodel"
+          }
+        }
+      },
+      "title": "refundbankmodels schema"
+    },
+    "productmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "product_category": {
+          "type": "string"
+        },
+        "partner_id": {
+          "type": "string"
+        },
+        "partner_name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "productmodel Schema"
+    },
+    "partnermodels": {
+      "type": "object",
+      "properties": {
+        "partners": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/partnermodel"
+          }
+        }
+      },
+      "title": "partnermodels schema"
+    },
+    "couponmodels": {
+      "type": "object",
+      "properties": {
+        "coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/couponmodel"
+          }
+        }
+      },
+      "title": "couponmodels schema"
+    },
+    "turbotaxfilemodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "file_size": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "turbotaxfilemodel Schema"
+    },
+    "refundbankmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "bank_name": {
+          "type": "string"
+        },
+        "bank_code": {
+          "type": "string"
+        },
+        "account": {
+          "type": "string"
+        },
+        "tax_code": {
+          "type": "string"
+        },
+        "refund_amount": {
+          "type": "number"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "amount_fee": {
+          "type": "number"
+        },
+        "expired_date": {
+          "type": "number"
+        }
+      },
+      "title": "refundbankmodel Schema"
+    },
+    "rolemodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "rolemodel Schema"
+    },
+    "cardmodel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/itemmodel"
+          }
+        }
+      },
+      "title": "cardmodel Schema"
+    }
+  }
+}
