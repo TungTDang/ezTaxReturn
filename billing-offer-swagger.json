@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "version": "2023-01-06T07:09:29Z",
-    "title": "/Billing&Offer&Partner&Pricing Management"
+    "title": "Billing-Offer-Partner-Pricing Management"
   },
   "host": "uyulnfo8gj.execute-api.ap-southeast-1.amazonaws.com",
-  "basePath": "/Billing&Offer&Partner&Pricing Management",
+  "basePath": "/api-exTaxReturn",
   "schemes": [
     "https"
   ],
@@ -996,18 +996,6 @@
       },
       "title": "filerrecordmodel Schema"
     },
-    "taxreturnmodels": {
-      "type": "object",
-      "properties": {
-        "taxreturns": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/taxreturnmodel"
-          }
-        }
-      },
-      "title": "taxreturnmodels schema"
-    },
     "paymentmodel": {
       "type": "object",
       "properties": {
@@ -1227,33 +1215,6 @@
         }
       },
       "title": "couponmodels schema"
-    },
-    "turbotaxfilemodel": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "file_name": {
-          "type": "string"
-        },
-        "content": {
-          "type": "string"
-        },
-        "content_type": {
-          "type": "string"
-        },
-        "file_size": {
-          "type": "string"
-        },
-        "user_name": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        }
-      },
-      "title": "turbotaxfilemodel Schema"
     },
     "refundbankmodel": {
       "type": "object",
